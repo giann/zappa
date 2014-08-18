@@ -1,0 +1,12 @@
+{
+    "name": "zappa",
+    "version": "1.0.0",
+    "description": "Zappa Templating",
+    "main": "web.js",
+    "dependencies": {
+        "express": "~4.4.3"
+    },
+    "scripts": {
+        "start": "node web.js"
+    }
+}
