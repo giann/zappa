@@ -2,7 +2,7 @@
 
 *Zappa* is a tiny javascript only templating library for use in the browser. Instead of writing a mix of HTML and Javascript/*Angular Expressions*, write only javascript !
 
-*Zappa* uses actual `HTMLElement`s internally. You can directly use them and avoid the parsing step of string based template systems.
+*Zappa* uses actual `HTMLElement`s internally. You can directly use them and avoid the parsing step of string based template systems. The generated HTML is always valid.
 
 *Zappa* is javascript only: no pseudo-language to learn or special delimiters to use, only javascript code.
 
