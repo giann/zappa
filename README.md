@@ -154,52 +154,6 @@ will generate
 </form>
 ```
 
-### Multiple children
-
-To append several elements to the same root, use `elements`:
-
-```javascript
-z.ul().elements([
-    z.li().text('one'),
-    z.li().text('two'),
-    z.li().text('three')
-]);
-```
-
-will generate:
-
-```html
-<ul>
-    <li>one</li>
-    <li>two</li>
-    <li>three</li>
-</ul>
-````
-
-### Functions
-
-###### You can use a function instead of `elements` array argument:
-
-```javascript
-var things = ['one', 'two', 'three']
-
-z.ul().elements(function () {
-    return things.map(function (item) {
-        return z.span().text(item + ' ' + item);
-    });
-});
-```
-
-will generate:
-
-```html
-<ul>
-    <li>one one</li>
-    <li>two two</li>
-    <li>three three</li>
-</ul>
-```
-
 ###### You can use functions instead of `attributes` values:
 
 ```javascript
@@ -224,6 +178,50 @@ or if you're on a tiny screen:
 
 ```html
 <div class="mobile"></div>
+```
+
+### Multiple children
+
+To append several elements to the same root, use `elements`:
+
+```javascript
+z.ul().elements([
+    z.li().text('one'),
+    z.li().text('two'),
+    z.li().text('three')
+]);
+```
+
+will generate:
+
+```html
+<ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+</ul>
+````
+
+###### You can use a function instead of `elements` array argument:
+
+```javascript
+var things = ['one', 'two', 'three']
+
+z.ul().elements(function () {
+    return things.map(function (item) {
+        return z.span().text(item + ' ' + item);
+    });
+});
+```
+
+will generate:
+
+```html
+<ul>
+    <li>one one</li>
+    <li>two two</li>
+    <li>three three</li>
+</ul>
 ```
 
 ### Get the result
