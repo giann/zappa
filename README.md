@@ -1,4 +1,4 @@
-# Zappa
+# <img src="https://raw.githubusercontent.com/giann/zappa/master/logo.png" alt="Zappa" height="25"> Zappa
 
 *Zappa* is a tiny full javascript templating library. Instead of writing a mix of HTML and Javascript/*Angular Expressions*, write only javascript !
 
