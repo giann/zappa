@@ -5,20 +5,25 @@
 ## Examples
 
 ```javascript
+    var context = {
+        name: 'Zappa',
+        things: ['very', 'much', 'easy']
+    };
+
     z('body')
         .elements([
-            z().h1().text('This is Zappa !'),
+            z().h1().text('This is ' + context.name + ' !'),
             z().section({class: 'content'})
                 .elements([
                     z().p().text('It\'s easy to write a zappa template.'),
                     z().ul()
-                        .elements([
-                            z().li().text('very'),
-                            z().li().text('much'),
-                            z().li().text('easy')
-                        ])
+                        .elements(
+                            context.things.map(function (item) {
+                                return z().li().text(item); 
+                            })
+                        )
                 ])
-        ])
+        ]);
 ```
 
 will append to `<body>`:
