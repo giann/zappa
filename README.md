@@ -10,6 +10,12 @@
 
 ## Quick Start
 
+### Installation
+
+```shell
+bower install zappa
+```
+
 ### Overview
 
 ```javascript
