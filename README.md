@@ -1,6 +1,6 @@
 # <img src="https://raw.githubusercontent.com/giann/zappa/master/logo.png" alt="Zappa" height="25"> Zappa
 
-*Zappa* is a tiny javascript only templating library for use in the browser. Instead of writing a mix of HTML and Javascript/*Angular Expressions*, write only javascript !
+*Zappa* is a tiny javascript only templating library for the browser. Instead of writing a mix of HTML and Javascript/*Angular Expressions*, write only javascript !
 
 *Zappa* uses actual `HTMLElement`s internally. You can directly use them and avoid the parsing step of string based template systems. The generated HTML is always valid.
 
