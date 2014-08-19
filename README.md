@@ -140,7 +140,11 @@ Any subsequent element function will append the generated HTML to the wrapped el
 To add attributes to an element, simply pass an object to the function:
 
 ```javascript
-z.form({'class': 'container', 'name': 'aForm', 'action': '/gothere'});
+z.form({
+    'class': 'container',
+    'name': 'aForm',
+    'action': '/gothere'
+});
 ```
 
 will generate
