@@ -1,7 +1,27 @@
 {
-    "name": "zappa",
-    "version": "0.0.0",
-    "dependencies": {
-        "lodash": "~2.4.1"
-    }
+  "name": "zappa",
+  "main": "zappa.js",
+  "version": "0.1",
+  "homepage": "https://github.com/giann/zappa",
+  "authors": [
+    "Benoit Giannangeli <giann008@gmail.com>"
+  ],
+  "description": "A tiny full javascript templating library",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "template"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "~2.4.1"
+  }
 }
