@@ -58,7 +58,7 @@ z.form();
 ...
 ```
 
-If you miss one or you wanna use [web components](http://www.polymer-project.org/), you can use `element`:
+If you miss one or you want to use [web components](http://www.polymer-project.org/), you can use `element`:
 
 
 ```javascript
