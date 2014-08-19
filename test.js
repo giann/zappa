@@ -5,14 +5,14 @@ var context = {
 
 z('body')
     .elements([
-        z().h1().text('This is ' + context.name + ' !'),
-        z().section({class: 'content'})
+        z.h1().text('This is ' + context.name + ' !'),
+        z.section({class: 'content'})
             .elements([
-                z().p().text('It\'s easy to write a zappa template.'),
-                z().ul()
+                z.p().text('It\'s easy to write a zappa template.'),
+                z.ul()
                     .elements(
                         context.things.map(function (item) {
-                            return z().li().text(item); 
+                            return z.li().text(item); 
                         })
                     )
             ])

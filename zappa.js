@@ -404,82 +404,310 @@ SOFTWARE.
         : new zappaWrapper(value);
     }
 
-    zappa.div = div;
-    zappa.span = span;
-    zappa.ul = ul;
-    zappa.li = li;
-    zappa.elements = elements;
-    zappa.element = element;
-    zappa.text = text;
-    zappa.a = a;
-    zappa.area = area;
-    zappa.audio = audio;
-    zappa.br = br;
-    zappa.button = button;
-    zappa.canvas = canvas;
-    zappa.data = data;
-    zappa.datalist = datalist;
-    zappa.dl = dl;
-    zappa.embed = embed;
-    zappa.fieldset = fieldset;
-    zappa.form = form;
-    zappa.h1 = h1;
-    zappa.h2 = h2;
-    zappa.h3 = h3;
-    zappa.h4 = h4;
-    zappa.h5 = h5;
-    zappa.h6 = h6;
-    zappa.hr = hr;
-    zappa.iframe = iframe;
-    zappa.image = image;
-    zappa.input = input;
-    zappa.label = label;
-    zappa.legend = legend;
-    zappa.li = li;
-    zappa.map = map;
-    zappa.video = video;
-    zappa.audio = audio;
-    zappa.meter = meter;
-    zappa.ins = ins;
-    zappa.del = del;
-    zappa.object = object;
-    zappa.ol = ol;
-    zappa.optgroup = optgroup;
-    zappa.option = option;
-    zappa.output = output;
-    zappa.p = p;
-    zappa.param = param;
-    zappa.pre = pre;
-    zappa.progress = progress;
-    zappa.blockquote = blockquote;
-    zappa.q = q;
-    zappa.cite = cite;
-    zappa.script = script;
-    zappa.noscript = noscript;
-    zappa.select = select;
-    zappa.source = source;
-    zappa.span = span;
-    zappa.style = style;
-    zappa.table = table;
-    zappa.caption = caption;
-    zappa.th = th;
-    zappa.td = td;
-    zappa.col = col;
-    zappa.colgroup = colgroup;
-    zappa.tr = tr;
-    zappa.tfoot = tfoot;
-    zappa.thead = thead;
-    zappa.tbody = tbody;
-    zappa.textarea = textarea;
-    zappa.time = time;
-    zappa.title = title;
-    zappa.track = track;
-    zappa.ul = ul;
-    zappa.section = section;
-    zappa.article = article;
-    zappa.nav = nav;
-    zappa.address = address;
-    zappa.aside = aside;
+    zappa.div = function (parentElement, attributes) {
+        return zappa(div(parentElement, attributes));
+    };
+
+    zappa.span = function (parentElement, attributes) {
+        return zappa(span(parentElement, attributes));
+    };
+
+    zappa.ul = function (parentElement, attributes) {
+        return zappa(ul(parentElement, attributes));
+    };
+
+    zappa.li = function (parentElement, attributes) {
+        return zappa(li(parentElement, attributes));
+    };
+
+    zappa.elements = function (parentElement, attributes) {
+        return zappa(elements(parentElement, attributes));
+    };
+
+    zappa.element = function (parentElement, attributes) {
+        return zappa(element(parentElement, attributes));
+    };
+
+    zappa.text = function (parentElement, attributes) {
+        return zappa(text(parentElement, attributes));
+    };
+
+    zappa.a = function (parentElement, attributes) {
+        return zappa(a(parentElement, attributes));
+    };
+
+    zappa.area = function (parentElement, attributes) {
+        return zappa(area(parentElement, attributes));
+    };
+
+    zappa.audio = function (parentElement, attributes) {
+        return zappa(audio(parentElement, attributes));
+    };
+
+    zappa.br = function (parentElement, attributes) {
+        return zappa(br(parentElement, attributes));
+    };
+
+    zappa.button = function (parentElement, attributes) {
+        return zappa(button(parentElement, attributes));
+    };
+
+    zappa.canvas = function (parentElement, attributes) {
+        return zappa(canvas(parentElement, attributes));
+    };
+
+    zappa.data = function (parentElement, attributes) {
+        return zappa(data(parentElement, attributes));
+    };
+
+    zappa.datalist = function (parentElement, attributes) {
+        return zappa(datalist(parentElement, attributes));
+    };
+
+    zappa.dl = function (parentElement, attributes) {
+        return zappa(dl(parentElement, attributes));
+    };
+
+    zappa.embed = function (parentElement, attributes) {
+        return zappa(embed(parentElement, attributes));
+    };
+
+    zappa.fieldset = function (parentElement, attributes) {
+        return zappa(fieldset(parentElement, attributes));
+    };
+
+    zappa.form = function (parentElement, attributes) {
+        return zappa(form(parentElement, attributes));
+    };
+
+    zappa.h1 = function (parentElement, attributes) {
+        return zappa(h1(parentElement, attributes));
+    };
+
+    zappa.h2 = function (parentElement, attributes) {
+        return zappa(h2(parentElement, attributes));
+    };
+
+    zappa.h3 = function (parentElement, attributes) {
+        return zappa(h3(parentElement, attributes));
+    };
+
+    zappa.h4 = function (parentElement, attributes) {
+        return zappa(h4(parentElement, attributes));
+    };
+
+    zappa.h5 = function (parentElement, attributes) {
+        return zappa(h5(parentElement, attributes));
+    };
+
+    zappa.h6 = function (parentElement, attributes) {
+        return zappa(h6(parentElement, attributes));
+    };
+
+    zappa.hr = function (parentElement, attributes) {
+        return zappa(hr(parentElement, attributes));
+    };
+
+    zappa.iframe = function (parentElement, attributes) {
+        return zappa(iframe(parentElement, attributes));
+    };
+
+    zappa.image = function (parentElement, attributes) {
+        return zappa(image(parentElement, attributes));
+    };
+
+    zappa.input = function (parentElement, attributes) {
+        return zappa(input(parentElement, attributes));
+    };
+
+    zappa.label = function (parentElement, attributes) {
+        return zappa(label(parentElement, attributes));
+    };
+
+    zappa.legend = function (parentElement, attributes) {
+        return zappa(legend(parentElement, attributes));
+    };
+
+    zappa.li = function (parentElement, attributes) {
+        return zappa(li(parentElement, attributes));
+    };
+
+    zappa.map = function (parentElement, attributes) {
+        return zappa(map(parentElement, attributes));
+    };
+
+    zappa.video = function (parentElement, attributes) {
+        return zappa(video(parentElement, attributes));
+    };
+
+    zappa.audio = function (parentElement, attributes) {
+        return zappa(audio(parentElement, attributes));
+    };
+
+    zappa.meter = function (parentElement, attributes) {
+        return zappa(meter(parentElement, attributes));
+    };
+
+    zappa.ins = function (parentElement, attributes) {
+        return zappa(ins(parentElement, attributes));
+    };
+
+    zappa.del = function (parentElement, attributes) {
+        return zappa(del(parentElement, attributes));
+    };
+
+    zappa.object = function (parentElement, attributes) {
+        return zappa(object(parentElement, attributes));
+    };
+
+    zappa.ol = function (parentElement, attributes) {
+        return zappa(ol(parentElement, attributes));
+    };
+
+    zappa.optgroup = function (parentElement, attributes) {
+        return zappa(optgroup(parentElement, attributes));
+    };
+
+    zappa.option = function (parentElement, attributes) {
+        return zappa(option(parentElement, attributes));
+    };
+
+    zappa.output = function (parentElement, attributes) {
+        return zappa(output(parentElement, attributes));
+    };
+
+    zappa.p = function (parentElement, attributes) {
+        return zappa(p(parentElement, attributes));
+    };
+
+    zappa.param = function (parentElement, attributes) {
+        return zappa(param(parentElement, attributes));
+    };
+
+    zappa.pre = function (parentElement, attributes) {
+        return zappa(pre(parentElement, attributes));
+    };
+
+    zappa.progress = function (parentElement, attributes) {
+        return zappa(progress(parentElement, attributes));
+    };
+
+    zappa.blockquote = function (parentElement, attributes) {
+        return zappa(blockquote(parentElement, attributes));
+    };
+
+    zappa.q = function (parentElement, attributes) {
+        return zappa(q(parentElement, attributes));
+    };
+
+    zappa.cite = function (parentElement, attributes) {
+        return zappa(cite(parentElement, attributes));
+    };
+
+    zappa.script = function (parentElement, attributes) {
+        return zappa(script(parentElement, attributes));
+    };
+
+    zappa.noscript = function (parentElement, attributes) {
+        return zappa(noscript(parentElement, attributes));
+    };
+
+    zappa.select = function (parentElement, attributes) {
+        return zappa(select(parentElement, attributes));
+    };
+
+    zappa.source = function (parentElement, attributes) {
+        return zappa(source(parentElement, attributes));
+    };
+
+    zappa.span = function (parentElement, attributes) {
+        return zappa(span(parentElement, attributes));
+    };
+
+    zappa.style = function (parentElement, attributes) {
+        return zappa(style(parentElement, attributes));
+    };
+
+    zappa.table = function (parentElement, attributes) {
+        return zappa(table(parentElement, attributes));
+    };
+
+    zappa.caption = function (parentElement, attributes) {
+        return zappa(caption(parentElement, attributes));
+    };
+
+    zappa.th = function (parentElement, attributes) {
+        return zappa(th(parentElement, attributes));
+    };
+
+    zappa.td = function (parentElement, attributes) {
+        return zappa(td(parentElement, attributes));
+    };
+
+    zappa.col = function (parentElement, attributes) {
+        return zappa(col(parentElement, attributes));
+    };
+
+    zappa.colgroup = function (parentElement, attributes) {
+        return zappa(colgroup(parentElement, attributes));
+    };
+
+    zappa.tr = function (parentElement, attributes) {
+        return zappa(tr(parentElement, attributes));
+    };
+
+    zappa.tfoot = function (parentElement, attributes) {
+        return zappa(tfoot(parentElement, attributes));
+    };
+
+    zappa.thead = function (parentElement, attributes) {
+        return zappa(thead(parentElement, attributes));
+    };
+
+    zappa.tbody = function (parentElement, attributes) {
+        return zappa(tbody(parentElement, attributes));
+    };
+
+    zappa.textarea = function (parentElement, attributes) {
+        return zappa(textarea(parentElement, attributes));
+    };
+
+    zappa.time = function (parentElement, attributes) {
+        return zappa(time(parentElement, attributes));
+    };
+
+    zappa.title = function (parentElement, attributes) {
+        return zappa(title(parentElement, attributes));
+    };
+
+    zappa.track = function (parentElement, attributes) {
+        return zappa(track(parentElement, attributes));
+    };
+
+    zappa.ul = function (parentElement, attributes) {
+        return zappa(ul(parentElement, attributes));
+    };
+
+    zappa.section = function (parentElement, attributes) {
+        return zappa(section(parentElement, attributes));
+    };
+
+    zappa.article = function (parentElement, attributes) {
+        return zappa(article(parentElement, attributes));
+    };
+
+    zappa.nav = function (parentElement, attributes) {
+        return zappa(nav(parentElement, attributes));
+    };
+
+    zappa.address = function (parentElement, attributes) {
+        return zappa(address(parentElement, attributes));
+    };
+
+    zappa.aside = function (parentElement, attributes) {
+        return zappa(aside(parentElement, attributes));
+    };
+
 
     function zappaWrapper(value) {
         if (value) {
