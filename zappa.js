@@ -49,17 +49,26 @@ SOFTWARE.
     var buildElement = function (parentElement, tag, attributes) {
         var e = document.createElement(tag);
 
-        if (_.isString(attributes)) {
-            e = text(e, attributes);
-        } else {
-            _.forOwn(attributes, function (value, attribute) {
-                if (_.isFunction(value)) {
-                    // what context to give their ?
-                    value = value();
-                }
+        // In case of: z.div({class: 'yolo'})
+        // parentElement would be == to {class: 'yolo'} and attributes would be undefined
+        if (parentElement && !isHTMLElement(parentElement) && !attributes) {
+            attributes = parentElement;
+            parentElement = undefined;
+        }
 
-                e.setAttribute(attribute, value);
-            });
+        if (attributes) {
+            if (_.isObject(attributes)) {
+                _.forOwn(attributes, function (value, attribute) {
+                    if (_.isFunction(value)) {
+                        // what context to give their ?
+                        value = value();
+                    }
+
+                    e.setAttribute(attribute, value);
+                });
+            } else {
+                throw new Error('Zappa: attributes must be an object.');
+            }
         }
 
         if (parentElement && isHTMLElement(parentElement)) {
@@ -395,7 +404,9 @@ SOFTWARE.
         return textNode;
     };
 
-    var element = buildElement;
+    var element = function (parentElement, tag, attributes) {
+        return buildElement(parentElement, tag, attributes);
+    }
 
     function zappa(value) {
         // don't wrap if already wrapped, even if wrapped by a different `zappa` constructor
@@ -403,6 +414,10 @@ SOFTWARE.
         ? value
         : new zappaWrapper(value);
     }
+
+    zappa.element = function (parentElement, tag, attributes) {
+        return zappa(element(parentElement, tag, attributes));
+    };
 
     zappa.div = function (parentElement, attributes) {
         return zappa(div(parentElement, attributes));
@@ -741,6 +756,7 @@ SOFTWARE.
 
     zappaWrapper.prototype = zappa.prototype;
 
+    // Adds zappa functions in it's prototype
     _.mixin(zappa, zappa);
 
     zappa.prototype.value = wrapperValueOf;
