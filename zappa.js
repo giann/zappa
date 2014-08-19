@@ -405,6 +405,15 @@ SOFTWARE.
     };
 
     var element = function (parentElement, tag, attributes) {
+
+        // In case of: z.element('div', {class: 'yolo'})
+        // parentElement would be == to {class: 'yolo'} and attributes would be undefined
+        if (parentElement && !isHTMLElement(parentElement)) {
+            attributes = tag;
+            tag = parentElement;
+            parentElement = undefined;
+        }
+
         return buildElement(parentElement, tag, attributes);
     }
 
@@ -417,6 +426,10 @@ SOFTWARE.
 
     zappa.element = function (parentElement, tag, attributes) {
         return zappa(element(parentElement, tag, attributes));
+    };
+
+    zappa.elements = function (parentElement, attributes) {
+        return zappa(elements(parentElement, attributes));
     };
 
     zappa.div = function (parentElement, attributes) {
@@ -433,14 +446,6 @@ SOFTWARE.
 
     zappa.li = function (parentElement, attributes) {
         return zappa(li(parentElement, attributes));
-    };
-
-    zappa.elements = function (parentElement, attributes) {
-        return zappa(elements(parentElement, attributes));
-    };
-
-    zappa.element = function (parentElement, attributes) {
-        return zappa(element(parentElement, attributes));
     };
 
     zappa.text = function (parentElement, attributes) {
