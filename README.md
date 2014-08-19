@@ -176,6 +176,56 @@ will generate:
 </ul>
 ````
 
+### Functions
+
+###### You can use a function instead of `elements` array argument:
+
+```javascript
+var things = ['one', 'two', 'three']
+
+z.ul().elements(function () {
+    return things.map(function (item) {
+        return z.span().text(item + ' ' + item);
+    });
+});
+```
+
+will generate:
+
+```html
+<ul>
+    <li>one one</li>
+    <li>two two</li>
+    <li>three three</li>
+</ul>
+```
+
+###### You can use functions instead of `attributes` values:
+
+```javascript
+z.div({
+    class: function () {
+        if (document.documentElement.clientWidth < 768) {
+           return 'mobile';
+        } else {
+           return 'desktop';
+        }
+    }
+});
+```
+
+will generate:
+
+```html
+<div class="desktop"></div>
+```
+
+or if you're on a tiny screen:
+
+```html
+<div class="mobile"></div>
+```
+
 ### Get the result
 
 The preferred way to use zappa's result is `value` which returns the `HTMLElement` generated:
