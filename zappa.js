@@ -753,10 +753,10 @@ SOFTWARE.
 
     function wrapperHtmlValueOf(shallow) {
         if (shallow) {
-            return this.__wrapped__.innerHTML;
+            return this.__wrapped__.outerHTML;
         }
 
-        return getRoot(this.__wrapped__).innerHTML;
+        return getRoot(this.__wrapped__).outerHTML;
     };
 
     zappaWrapper.prototype = zappa.prototype;

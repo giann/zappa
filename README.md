@@ -179,4 +179,4 @@ But you can still work with strings, if you are required to, with `html`:
 ```javascript
 z.div().text('get me !').html();
 ```
-will return the `innerHTML` of the generated HTML.
+will return the `outerHTML` of the generated HTML.
