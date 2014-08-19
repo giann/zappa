@@ -2,8 +2,6 @@
     "name": "zappa",
     "version": "0.0.0",
     "dependencies": {
-        "lodash": "~2.4.1",
-        "numeral": "latest",
-        "moment": "latest"
+        "lodash": "~2.4.1"
     }
 }
