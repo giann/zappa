@@ -4,7 +4,7 @@
 
 *Zappa* uses actual `HTMLElement`s internally. You can directly use them and avoid the parsing step of string based template systems.
 
-*Zappa* is full javascript: no pseudo-language to learn or special delimiters to use, only javascript code.
+*Zappa* is javascript only: no pseudo-language to learn or special delimiters to use, only javascript code.
 
 **Requirements:** [Lodash](http://lodash.com/)
 
