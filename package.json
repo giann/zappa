@@ -1,12 +1,18 @@
 {
-    "name": "zappa",
-    "version": "1.0.0",
-    "description": "Zappa Templating",
-    "main": "web.js",
-    "dependencies": {
-        "express": "~4.4.3"
-    },
-    "scripts": {
-        "start": "node web.js"
-    }
+  "name": "zappa",
+  "version": "1.0.0",
+  "description": "Zappa Templating",
+  "main": "web.js",
+  "dependencies": {
+    "express": "~4.4.3"
+  },
+  "scripts": {
+    "start": "node web.js"
+  },
+  "devDependencies": {
+    "karma": "^0.12.22",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
 }

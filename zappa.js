@@ -210,8 +210,8 @@ SOFTWARE.
         return buildElement(parentElement, 'iframe', attributes);
     };
 
-    var image = function image (parentElement, attributes) {
-        return buildElement(parentElement, 'image', attributes);
+    var img = function img (parentElement, attributes) {
+        return buildElement(parentElement, 'img', attributes);
     };
 
     var input = function input (parentElement, attributes) {
@@ -567,8 +567,8 @@ SOFTWARE.
         return zappa(iframe(parentElement, attributes));
     };
 
-    zappa.image = function (parentElement, attributes) {
-        return zappa(image(parentElement, attributes));
+    zappa.img = function (parentElement, attributes) {
+        return zappa(img(parentElement, attributes));
     };
 
     zappa.input = function (parentElement, attributes) {
