@@ -6,8 +6,6 @@
 
 *Zappa* is javascript only: no pseudo-language to learn or special delimiters to use, only javascript code.
 
-**Requirements:** [Lodash](http://lodash.com/)
-
 ## Quick Start
 
 ### Installation

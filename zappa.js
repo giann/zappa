@@ -24,6 +24,39 @@ SOFTWARE.
 
 ;(function() {
 
+    // Embedded lodash function to avoid dependency
+    var objectTypes = {
+        'boolean': false,
+        'function': true,
+        'object': true,
+        'number': false,
+        'string': false,
+        'undefined': false
+    };
+
+    var isObject = function (value) {
+        // check if the value is the ECMAScript language type of Object
+        // http://es5.github.io/#x8
+        // and avoid a V8 bug
+        // http://code.google.com/p/v8/issues/detail?id=2291
+        return !!(value && objectTypes[typeof value]);
+    };
+
+    var isString = function (value) {
+        return typeof value == 'string' ||
+            value && typeof value == 'object' && toString.call(value) == '[object String]' || false;
+    };
+
+    var isFunction = function (value) {
+        return typeof value == 'function';
+    }
+    // fallback for older versions of Chrome and Safari
+    if (isFunction(/x/)) {
+        isFunction = function(value) {
+            return typeof value == 'function' && toString.call(value) == '[object Function]';
+        };
+    }
+
     var isHTMLElement = function (element) {
         return HTMLElement.prototype.isPrototypeOf(element) || Text.prototype.isPrototypeOf(element);
     };
@@ -57,15 +90,17 @@ SOFTWARE.
         }
 
         if (attributes) {
-            if (_.isObject(attributes)) {
-                _.forOwn(attributes, function (value, attribute) {
-                    if (_.isFunction(value)) {
-                        // what context to give their ?
-                        value = value();
-                    }
+            if (isObject(attributes)) {
+                for (var key in attributes) {
+                    if (attributes.hasOwnProperty(key)) {
+                        if (isFunction(attributes[key])) {
+                            // what context to give their ?
+                            attributes[key] = attributes[key]();
+                        }
 
-                    e.setAttribute(attribute, value);
-                });
+                        e.setAttribute(key, attributes[key]);
+                    }
+                }
             } else {
                 throw new Error('Zappa: attributes must be an object.');
             }
@@ -372,19 +407,19 @@ SOFTWARE.
     };
 
     var elements = function (parentElement, list) {
-        if (_.isArray(list)) {
-            _.forEach(list, function (element) {
+        if (Array.isArray(list)) {
+            list.forEach(function (element) {
                 if (isHTMLElement(element)) {
                     parentElement.appendChild(element);
                 } else if (isZappa(element)) {
                     parentElement.appendChild(element.value(true));
-                } else if (_.isFunction(element)) {
+                } else if (isFunction(element)) {
                     parentElement.appendChild(element().value(true));
                 }
             });
         } else if (isHTMLElement(list)) {
             parentElement.appendChild(list);
-        } else if (_.isFunction(list)) {
+        } else if (isFunction(list)) {
             list = list();
 
             return elements(parentElement, list);
@@ -419,7 +454,7 @@ SOFTWARE.
 
     function zappa(value) {
         // don't wrap if already wrapped, even if wrapped by a different `zappa` constructor
-        return (value && typeof value == 'object' && !_.isArray(value) && hasOwnProperty.call(value, '__wrapped__'))
+        return (value && typeof value == 'object' && !Array.isArray(value) && hasOwnProperty.call(value, '__wrapped__'))
         ? value
         : new zappaWrapper(value);
     }
@@ -731,11 +766,11 @@ SOFTWARE.
 
     function zappaWrapper(value) {
         if (value) {
-            if (!isHTMLElement(value) && !_.isString(value)) {
+            if (!isHTMLElement(value) && !isString(value)) {
                 throw new Error('wrapped value must be an instance of HTMLElement or a selector expression');
             }
 
-            if (_.isString(value)) {
+            if (isString(value)) {
                 value = document.querySelector(value);
             }
         }
@@ -762,7 +797,30 @@ SOFTWARE.
     zappaWrapper.prototype = zappa.prototype;
 
     // Adds zappa functions in it's prototype
-    _.mixin(zappa, zappa);
+    //_.mixin(zappa, zappa);
+    for (var key in zappa) {
+        if (zappa.hasOwnProperty(key)) {
+            (function() {
+                var func = zappa[key];
+                zappa.prototype[key] = function() {
+                    var chainAll = this.__chain__,
+                        value = this.__wrapped__,
+                        args = [value];
+
+                    [].push.apply(args, arguments);
+                    var result = func.apply(zappa, args);
+                    if (chainAll) {
+                        if (value === result && isObject(result)) {
+                            return this;
+                        }
+                        result = new zappa(result);
+                        result.__chain__ = chainAll;
+                    }
+                    return result;
+                };
+            })();
+        }
+    }
 
     zappa.prototype.value = wrapperValueOf;
     zappa.prototype.html = wrapperHtmlValueOf;
