@@ -21,9 +21,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {},
-  "devDependencies": {
-    "karma": "latest",
-    "karma-jasmine": "latest"
-  }
+  "dependencies": {}
 }
