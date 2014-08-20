@@ -1,7 +1,7 @@
 {
   "name": "zappa",
   "main": "zappa.js",
-  "version": "0.1",
+  "version": "0.2.0",
   "homepage": "https://github.com/giann/zappa",
   "authors": [
     "Benoit Giannangeli <giann008@gmail.com>"
