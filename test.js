@@ -375,4 +375,16 @@ describe("Test Zappa utility functions", function() {
         expect(z.div().text('some text').html()).toBe('<div>some text</div>');
     });
 
+    it("html() returns html", function() {
+        expect(z.div().html()).toBe('<div></div>');
+    });
+
+    it("value() returns HTMLElement", function() {
+        expect(
+            HTMLElement.prototype.isPrototypeOf(
+                z.div().value()
+            )
+        ).toBe(true);
+    });
+
 });
