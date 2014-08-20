@@ -322,3 +322,57 @@ describe("Test HTML5 tags functions", function() {
 
 
 });
+
+describe("Test element's attributes", function() {
+
+    it("z.div({'class': 'aClass'}) generates a div with a class attribute set to 'aClass'", function() {
+        expect(z.div({'class': 'aClass'}).html()).toBe('<div class="aClass"></div>');
+    });
+
+    it("z.div({'class': function}) generates a div with a class attribute set to the result of function", function() {
+        expect(z.div({
+            'class': function () {
+                return 'aClass';
+            }
+        }).html()).toBe('<div class="aClass"></div>');
+    });
+
+});
+
+describe("Test Zappa utility functions", function() {
+
+    it("element() generates a custom element", function() {
+        expect(z.element('div').html()).toBe('<div></div>');
+    });
+
+    it("elements() append children to an element", function() {
+        expect(
+            z.ul()
+                .elements([
+                    z.li(),
+                    z.li(),
+                    z.li()
+                ])
+            .html())
+        .toBe('<ul><li></li><li></li><li></li></ul>');
+    });
+
+    it("elements(function) append children returned by function to an element", function() {
+        expect(
+            z.ul()
+                .elements(
+                    function () {
+                        return [
+                            z.li(),
+                            z.li(),
+                            z.li()
+                        ]
+                    }).html())
+        .toBe('<ul><li></li><li></li><li></li></ul>');
+    });
+
+    it("text() add a textNode to the parentElement", function() {
+        expect(z.div().text('some text').html()).toBe('<div>some text</div>');
+    });
+
+});
