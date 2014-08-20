@@ -6,7 +6,7 @@
 
 *Zappa* is javascript only: no pseudo-language to learn or special delimiters to use, only javascript code.
 
-## Quick Start
+## Getting Started
 
 ### Installation
 
@@ -238,3 +238,7 @@ But you can still work with strings, if you are required to, with `html`:
 z.div().text('get me !').html();
 ```
 will return the `outerHTML` of the generated HTML.
+
+## License
+This library is free software; you can redistribute it and/or modify it under
+the terms of the MIT license. See [LICENSE](LICENSE) for details.
