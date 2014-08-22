@@ -1,18 +1,18 @@
 describe("Test zappa root expressions", function() {
 
-    it("z.div() works", function() {
+    it("should generate a div", function() {
         expect(z.div().html()).toBe('<div></div>');
     });
 
-    it("z().div() works", function() {
+    it("should generate a div", function() {
         expect(z().div().html()).toBe('<div></div>');
     });
 
-    it("z('body') wrap <body>", function() {
+    it("should find and wrap <body>", function() {
         expect(z('body').value().tagName).toBe('HTML');
     });
 
-    it("z(document.body) wrap <body>", function() {
+    it("should wrap document.body", function() {
         expect(z(document.body).value().tagName).toBe('HTML');
     });
 
@@ -20,303 +20,303 @@ describe("Test zappa root expressions", function() {
 
 describe("Test HTML5 tags functions", function() {
 
-    it("z.div() works", function() {
+    it("should generate a div", function() {
         expect(z.div().html()).toBe('<div></div>');
     });
 
-    it("z.span() works", function() {
+    it("should generate a span", function() {
         expect(z.span().html()).toBe('<span></span>');
     });
 
-    it("z.div() works", function () {
+    it("should generate a div", function () {
         expect(z.div().html()).toBe('<div></div>')
     });
 
-    it("z.span() works", function () {
+    it("should generate a span", function () {
         expect(z.span().html()).toBe('<span></span>')
     });
 
-    it("z.ul() works", function () {
+    it("should generate a ul", function () {
         expect(z.ul().html()).toBe('<ul></ul>')
     });
 
-    it("z.li() works", function () {
+    it("should generate a li", function () {
         expect(z.li().html()).toBe('<li></li>')
     });
 
-    it("z.a() works", function () {
+    it("should generate a a", function () {
         expect(z.a().html()).toBe('<a></a>')
     });
 
-    it("z.area() works", function () {
+    it("should generate a area", function () {
         expect(z.area().html()).toBe('<area>')
     });
 
-    it("z.audio() works", function () {
+    it("should generate a audio", function () {
         expect(z.audio().html()).toBe('<audio></audio>')
     });
 
-    it("z.br() works", function () {
+    it("should generate a br", function () {
         expect(z.br().html()).toBe('<br>')
     });
 
-    it("z.button() works", function () {
+    it("should generate a button", function () {
         expect(z.button().html()).toBe('<button></button>')
     });
 
-    it("z.canvas() works", function () {
+    it("should generate a canvas", function () {
         expect(z.canvas().html()).toBe('<canvas></canvas>')
     });
 
-    it("z.data() works", function () {
+    it("should generate a data", function () {
         expect(z.data().html()).toBe('<data></data>')
     });
 
-    it("z.datalist() works", function () {
+    it("should generate a datalist", function () {
         expect(z.datalist().html()).toBe('<datalist></datalist>')
     });
 
-    it("z.dl() works", function () {
+    it("should generate a dl", function () {
         expect(z.dl().html()).toBe('<dl></dl>')
     });
 
-    it("z.embed() works", function () {
+    it("should generate a embed", function () {
         expect(z.embed().html()).toBe('<embed>')
     });
 
-    it("z.fieldset() works", function () {
+    it("should generate a fieldset", function () {
         expect(z.fieldset().html()).toBe('<fieldset></fieldset>')
     });
 
-    it("z.form() works", function () {
+    it("should generate a form", function () {
         expect(z.form().html()).toBe('<form></form>')
     });
 
-    it("z.h1() works", function () {
+    it("should generate a h1", function () {
         expect(z.h1().html()).toBe('<h1></h1>')
     });
 
-    it("z.h2() works", function () {
+    it("should generate a h2", function () {
         expect(z.h2().html()).toBe('<h2></h2>')
     });
 
-    it("z.h3() works", function () {
+    it("should generate a h3", function () {
         expect(z.h3().html()).toBe('<h3></h3>')
     });
 
-    it("z.h4() works", function () {
+    it("should generate a h4", function () {
         expect(z.h4().html()).toBe('<h4></h4>')
     });
 
-    it("z.h5() works", function () {
+    it("should generate a h5", function () {
         expect(z.h5().html()).toBe('<h5></h5>')
     });
 
-    it("z.h6() works", function () {
+    it("should generate a h6", function () {
         expect(z.h6().html()).toBe('<h6></h6>')
     });
 
-    it("z.hr() works", function () {
+    it("should generate a hr", function () {
         expect(z.hr().html()).toBe('<hr>')
     });
 
-    it("z.iframe() works", function () {
+    it("should generate a iframe", function () {
         expect(z.iframe().html()).toBe('<iframe></iframe>')
     });
 
-    it("z.img() works", function () {
+    it("should generate a img", function () {
         expect(z.img().html()).toBe('<img>')
     });
 
-    it("z.input() works", function () {
+    it("should generate a input", function () {
         expect(z.input().html()).toBe('<input>')
     });
 
-    it("z.label() works", function () {
+    it("should generate a label", function () {
         expect(z.label().html()).toBe('<label></label>')
     });
 
-    it("z.legend() works", function () {
+    it("should generate a legend", function () {
         expect(z.legend().html()).toBe('<legend></legend>')
     });
 
-    it("z.li() works", function () {
+    it("should generate a li", function () {
         expect(z.li().html()).toBe('<li></li>')
     });
 
-    it("z.map() works", function () {
+    it("should generate a map", function () {
         expect(z.map().html()).toBe('<map></map>')
     });
 
-    it("z.video() works", function () {
+    it("should generate a video", function () {
         expect(z.video().html()).toBe('<video></video>')
     });
 
-    it("z.audio() works", function () {
+    it("should generate a audio", function () {
         expect(z.audio().html()).toBe('<audio></audio>')
     });
 
-    it("z.meter() works", function () {
+    it("should generate a meter", function () {
         expect(z.meter().html()).toBe('<meter></meter>')
     });
 
-    it("z.ins() works", function () {
+    it("should generate a ins", function () {
         expect(z.ins().html()).toBe('<ins></ins>')
     });
 
-    it("z.del() works", function () {
+    it("should generate a del", function () {
         expect(z.del().html()).toBe('<del></del>')
     });
 
-    it("z.object() works", function () {
+    it("should generate a object", function () {
         expect(z.object().html()).toBe('<object></object>')
     });
 
-    it("z.ol() works", function () {
+    it("should generate a ol", function () {
         expect(z.ol().html()).toBe('<ol></ol>')
     });
 
-    it("z.optgroup() works", function () {
+    it("should generate a optgroup", function () {
         expect(z.optgroup().html()).toBe('<optgroup></optgroup>')
     });
 
-    it("z.option() works", function () {
+    it("should generate a option", function () {
         expect(z.option().html()).toBe('<option></option>')
     });
 
-    it("z.output() works", function () {
+    it("should generate a output", function () {
         expect(z.output().html()).toBe('<output></output>')
     });
 
-    it("z.p() works", function () {
+    it("should generate a p", function () {
         expect(z.p().html()).toBe('<p></p>')
     });
 
-    it("z.param() works", function () {
+    it("should generate a param", function () {
         expect(z.param().html()).toBe('<param>')
     });
 
-    it("z.pre() works", function () {
+    it("should generate a pre", function () {
         expect(z.pre().html()).toBe('<pre></pre>')
     });
 
-    it("z.progress() works", function () {
+    it("should generate a progress", function () {
         expect(z.progress().html()).toBe('<progress></progress>')
     });
 
-    it("z.blockquote() works", function () {
+    it("should generate a blockquote", function () {
         expect(z.blockquote().html()).toBe('<blockquote></blockquote>')
     });
 
-    it("z.q() works", function () {
+    it("should generate a q", function () {
         expect(z.q().html()).toBe('<q></q>')
     });
 
-    it("z.cite() works", function () {
+    it("should generate a cite", function () {
         expect(z.cite().html()).toBe('<cite></cite>')
     });
 
-    it("z.script() works", function () {
+    it("should generate a script", function () {
         expect(z.script().html()).toBe('<script></script>')
     });
 
-    it("z.noscript() works", function () {
+    it("should generate a noscript", function () {
         expect(z.noscript().html()).toBe('<noscript></noscript>')
     });
 
-    it("z.select() works", function () {
+    it("should generate a select", function () {
         expect(z.select().html()).toBe('<select></select>')
     });
 
-    it("z.source() works", function () {
+    it("should generate a source", function () {
         expect(z.source().html()).toBe('<source>')
     });
 
-    it("z.span() works", function () {
+    it("should generate a span", function () {
         expect(z.span().html()).toBe('<span></span>')
     });
 
-    it("z.style() works", function () {
+    it("should generate a style", function () {
         expect(z.style().html()).toBe('<style></style>')
     });
 
-    it("z.table() works", function () {
+    it("should generate a table", function () {
         expect(z.table().html()).toBe('<table></table>')
     });
 
-    it("z.caption() works", function () {
+    it("should generate a caption", function () {
         expect(z.caption().html()).toBe('<caption></caption>')
     });
 
-    it("z.th() works", function () {
+    it("should generate a th", function () {
         expect(z.th().html()).toBe('<th></th>')
     });
 
-    it("z.td() works", function () {
+    it("should generate a td", function () {
         expect(z.td().html()).toBe('<td></td>')
     });
 
-    it("z.col() works", function () {
+    it("should generate a col", function () {
         expect(z.col().html()).toBe('<col>')
     });
 
-    it("z.colgroup() works", function () {
+    it("should generate a colgroup", function () {
         expect(z.colgroup().html()).toBe('<colgroup></colgroup>')
     });
 
-    it("z.tr() works", function () {
+    it("should generate a tr", function () {
         expect(z.tr().html()).toBe('<tr></tr>')
     });
 
-    it("z.tfoot() works", function () {
+    it("should generate a tfoot", function () {
         expect(z.tfoot().html()).toBe('<tfoot></tfoot>')
     });
 
-    it("z.thead() works", function () {
+    it("should generate a thead", function () {
         expect(z.thead().html()).toBe('<thead></thead>')
     });
 
-    it("z.tbody() works", function () {
+    it("should generate a tbody", function () {
         expect(z.tbody().html()).toBe('<tbody></tbody>')
     });
 
-    it("z.textarea() works", function () {
+    it("should generate a textarea", function () {
         expect(z.textarea().html()).toBe('<textarea></textarea>')
     });
 
-    it("z.time() works", function () {
+    it("should generate a time", function () {
         expect(z.time().html()).toBe('<time></time>')
     });
 
-    it("z.title() works", function () {
+    it("should generate a title", function () {
         expect(z.title().html()).toBe('<title></title>')
     });
 
-    it("z.track() works", function () {
+    it("should generate a track", function () {
         expect(z.track().html()).toBe('<track></track>')
     });
 
-    it("z.ul() works", function () {
+    it("should generate a ul", function () {
         expect(z.ul().html()).toBe('<ul></ul>')
     });
 
-    it("z.section() works", function () {
+    it("should generate a section", function () {
         expect(z.section().html()).toBe('<section></section>')
     });
 
-    it("z.article() works", function () {
+    it("should generate a article", function () {
         expect(z.article().html()).toBe('<article></article>')
     });
 
-    it("z.nav() works", function () {
+    it("should generate a nav", function () {
         expect(z.nav().html()).toBe('<nav></nav>')
     });
 
-    it("z.address() works", function () {
+    it("should generate a address", function () {
         expect(z.address().html()).toBe('<address></address>')
     });
 
-    it("z.aside() works", function () {
+    it("should generate a aside", function () {
         expect(z.aside().html()).toBe('<aside></aside>')
     });
 
@@ -325,11 +325,11 @@ describe("Test HTML5 tags functions", function() {
 
 describe("Test element's attributes", function() {
 
-    it("z.div({'class': 'aClass'}) generates a div with a class attribute set to 'aClass'", function() {
+    it("should generate a div with a class attribute set to 'aClass'", function() {
         expect(z.div({'class': 'aClass'}).html()).toBe('<div class="aClass"></div>');
     });
 
-    it("z.div({'class': function}) generates a div with a class attribute set to the result of function", function() {
+    it("should generate a div with a class attribute set to the result of a function", function() {
         expect(z.div({
             'class': function () {
                 return 'aClass';
@@ -341,11 +341,11 @@ describe("Test element's attributes", function() {
 
 describe("Test Zappa utility functions", function() {
 
-    it("element() generates a custom element", function() {
+    it("should generate a custom element", function() {
         expect(z.element('div').html()).toBe('<div></div>');
     });
 
-    it("elements() append children to an element", function() {
+    it("should append children to an element", function() {
         expect(
             z.ul()
                 .elements([
@@ -357,7 +357,7 @@ describe("Test Zappa utility functions", function() {
         .toBe('<ul><li></li><li></li><li></li></ul>');
     });
 
-    it("elements(function) append children returned by function to an element", function() {
+    it("should append children returned by a function to an element", function() {
         expect(
             z.ul()
                 .elements(
@@ -371,15 +371,15 @@ describe("Test Zappa utility functions", function() {
         .toBe('<ul><li></li><li></li><li></li></ul>');
     });
 
-    it("text() add a textNode to the parentElement", function() {
+    it("should add a textNode to the parentElement", function() {
         expect(z.div().text('some text').html()).toBe('<div>some text</div>');
     });
 
-    it("html() returns html", function() {
+    it("should return an html string", function() {
         expect(z.div().html()).toBe('<div></div>');
     });
 
-    it("value() returns HTMLElement", function() {
+    it("should return a DOM Object", function() {
         expect(
             HTMLElement.prototype.isPrototypeOf(
                 z.div().value()
